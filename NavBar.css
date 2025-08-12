@@ -1,0 +1,13 @@
+.nav{position:sticky; top:0; background:white; border-bottom:1px solid #eee; z-index:50}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; max-width:1200px; margin:0 auto; padding:14px 24px}
+.logo{font-weight:800; font-size:1.4rem; letter-spacing:1px}
+.logo span{color:var(--hot)}
+.links{display:flex; gap:18px}
+.links a{font-weight:600}
+.burger{display:none; width:40px; height:40px; border:0; background:transparent; padding:0}
+.burger span{display:block; height:2px; margin:7px 0; background:#111}
+@media (max-width:900px){
+  .links{position:fixed; inset:60px 0 auto 0; background:white; border-bottom:1px solid #eee; padding:16px 24px; display:none; flex-direction:column}
+  .links.open{display:flex}
+  .burger{display:block}
+}
