@@ -1,0 +1,7 @@
+cd /path/to/hotmess-site
+git init
+git add .
+git commit -m "Initial HOTMESS London site"
+git branch -M main
+git remote add origin https://github.com/SICQR/hotmess-site.git
+git push -u origin main
