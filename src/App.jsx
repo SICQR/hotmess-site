@@ -1,8 +1,8 @@
 import './styles.css'
-import NavBar from './components/NavBar'
-import RadioPlayer from './components/RadioPlayer'
-import ProductGrid from './components/ProductGrid'
-import Footer from './components/Footer'
+import NavBar from '@/components/NavBar'
+import RadioPlayer from '@/components/RadioPlayer'
+import ProductGrid from '@/components/ProductGrid'
+import Footer from '@/components/Footer'
 
 export default function App(){
   return (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getProducts } from '../lib/shopify'
+import { getProducts } from '@/lib/shopify'
 
 export default function ProductGrid(){
   const [items,setItems]=useState([])

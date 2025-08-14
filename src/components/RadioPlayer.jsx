@@ -1,4 +1,4 @@
-import { BRAND } from '../lib/brand'
+import { BRAND } from '@/lib/brand'
 
 export default function RadioPlayer(){
   const src = BRAND.radioStream || 'https://listen.radioking.com/radio/736103/stream/802454'
