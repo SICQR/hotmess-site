@@ -1,20 +1,27 @@
-import { BRAND } from '../lib/brand'
+import { useEffect, useRef, useState } from 'react'
 
 export default function RadioPlayer(){
-  const src = BRAND.radioStream || 'https://listen.radioking.com/radio/736103/stream/802454'
+  const audioRef = useRef(null)
+  const [playing, setPlaying] = useState(false)
+  const src = process.env.VITE_RADIO_STREAM_URL
+
+  function toggle(){
+    const a = audioRef.current
+    if (!a) return
+    if (a.paused) { a.play(); setPlaying(true) } else { a.pause(); setPlaying(false) }
+  }
+
+  useEffect(()=>{
+    const a = audioRef.current
+    if (a) { a.src = src }
+  }, [src])
+
   return (
-    <div className="card">
-      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-        <strong>HOTMESS RADIO — On Air</strong>
-        <span className="badge">LIVE</span>
-      </div>
-      <audio controls style={{width:'100%', marginTop:12}}>
-        <source src={src} type="audio/mpeg"/>
-        Your browser does not support the audio element.
-      </audio>
-      <div style={{marginTop:10, fontSize:'.95rem', opacity:.8}}>
-        Forecast or Foreplay? Tune in. Then shop the drop.
-      </div>
+    <div className="radio-panel">
+      <span className="badge">LIVE</span>
+      <strong>HOTMESS Radio</strong>
+      <button className="btn btn-secondary" onClick={toggle}>{playing? 'Pause' : 'Play'}</button>
+      <audio ref={audioRef} preload="none" />
     </div>
   )
 }

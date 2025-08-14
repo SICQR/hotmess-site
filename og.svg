@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <rect width="100%" height="100%" fill="#000"/>
+  <text x="72" y="200" font-family="Oswald, Arial" font-weight="700" font-size="96" fill="#fff">HOTMESS LONDON</text>
+  <text x="72" y="310" font-family="Inter, Arial" font-size="42" fill="#fff">Always Too Much, Never Enough</text>
+  <rect x="72" y="380" width="420" height="16" fill="#FF5300"/>
+</svg>
