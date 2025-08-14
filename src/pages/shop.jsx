@@ -1,3 +1,4 @@
+// src/pages/shop.jsx
 export async function getServerSideProps() {
   return {
     redirect: {
