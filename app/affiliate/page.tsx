@@ -1,14 +1,21 @@
+'use client'
+
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { CrossCTA } from '../../components/CrossCTA'
 import { QRCodeGenerator } from '../../components/QRCodeGenerator'
-
-export const metadata = {
-  title: 'HOTMESS Affiliate — Earn with Us',
-  description: 'Generate personal QR codes, track performance, get paid. Join the HOTMESS affiliate program.',
-}
+import { analytics } from '../../src/lib/analytics'
 
 export default function AffiliatePage() {
+  const handleGenerateClick = () => {
+    analytics.affiliateApplyClick('hero-generate')
+    document.getElementById('generator')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const handleDashboardClick = () => {
+    analytics.affiliateApplyClick('hero-dashboard')
+    document.getElementById('dashboard')?.scrollIntoView({ behavior: 'smooth' })
+  }
   return (
     <>
       <Header />
@@ -25,12 +32,18 @@ export default function AffiliatePage() {
               Generate personal QR codes, track performance, get paid.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#generator" className="btn btn-primary">
+              <button 
+                onClick={handleGenerateClick}
+                className="btn btn-primary"
+              >
                 Generate QR Code
-              </a>
-              <a href="#dashboard" className="btn btn-secondary">
+              </button>
+              <button
+                onClick={handleDashboardClick}
+                className="btn btn-secondary"
+              >
                 View Dashboard
-              </a>
+              </button>
             </div>
           </div>
         </div>

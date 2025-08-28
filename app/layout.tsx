@@ -1,6 +1,7 @@
 import { ThemeSkin } from '../components/ThemeSkin'
 import { CookieConsent } from '../components/CookieConsent'
 import { Pixels } from '../components/Pixels'
+import { AnalyticsProvider } from '../src/components/AnalyticsProvider'
 import './globals.css'
 
 export const metadata = {
@@ -31,7 +32,9 @@ export default function RootLayout({
       <body>
         <ThemeSkin>
           <Pixels />
-          {children}
+          <AnalyticsProvider>
+            {children}
+          </AnalyticsProvider>
           <CookieConsent />
         </ThemeSkin>
       </body>
