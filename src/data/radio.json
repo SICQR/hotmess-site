@@ -1,0 +1,59 @@
+[
+  {
+    "id": "nik-denton-residency",
+    "title": "Nik Denton Residency", 
+    "slug": "nik-denton-residency",
+    "host": "Nik Denton",
+    "day": "sun",
+    "start": "20:00",
+    "end": "22:00",
+    "description": "Weekly residency with the provocateur himself. Deep cuts, fresh finds, and that signature energy.",
+    "tags": ["residency", "deep cuts", "energy"],
+    "live": true
+  },
+  {
+    "id": "stewart-who-provocateur",
+    "title": "Stewart Who Provocateur",
+    "slug": "stewart-who-provocateur", 
+    "host": "Stewart Who",
+    "day": "thu",
+    "start": "21:00",
+    "end": "23:00",
+    "description": "Bi-weekly Thursday sessions. Podcast vibes meet DJ sets. Stewart Who brings the conversation and the beats.",
+    "tags": ["provocateur", "conversation", "podcast"],
+    "live": true
+  },
+  {
+    "id": "aftercare-sundays",
+    "title": "Aftercare Sundays",
+    "slug": "aftercare-sundays",
+    "day": "sun", 
+    "start": "14:00",
+    "end": "16:00",
+    "description": "Dedicated time for aftercare conversations. Real talk about real experiences, with resources that actually help.",
+    "tags": ["aftercare", "care", "resources"],
+    "live": true
+  },
+  {
+    "id": "morning-mix",
+    "title": "Morning Energy",
+    "slug": "morning-mix",
+    "day": "mon",
+    "start": "08:00", 
+    "end": "10:00",
+    "description": "Start your week right. High energy mixes to get you moving.",
+    "tags": ["morning", "energy", "mix"],
+    "live": false
+  },
+  {
+    "id": "midweek-flow",
+    "title": "Midweek Flow",
+    "slug": "midweek-flow",
+    "day": "wed",
+    "start": "18:00",
+    "end": "20:00", 
+    "description": "Smooth transitions for the middle of your week. Flow state music.",
+    "tags": ["flow", "midweek", "smooth"],
+    "live": false
+  }
+]
