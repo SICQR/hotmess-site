@@ -1,0 +1,87 @@
+[
+  {
+    "id": "superhung-drop-01",
+    "title": "SUPERHUNG Drop #01",
+    "description": "Maximum impact pieces for those who demand attention. Limited quantities, maximum statement.",
+    "products": [
+      {
+        "id": "superhung-vest-black",
+        "title": "SUPERHUNG Vest - Black",
+        "priceGBP": 45,
+        "compareAtGBP": 65,
+        "image": "/images/products/superhung-vest-black.jpg",
+        "badge": "SUPERHUNG",
+        "href": "/product/superhung-vest-black",
+        "inStock": true
+      },
+      {
+        "id": "superhung-harness",
+        "title": "SUPERHUNG Harness",
+        "priceGBP": 85,
+        "image": "/images/products/superhung-harness.jpg", 
+        "badge": "SUPERHUNG",
+        "href": "/product/superhung-harness",
+        "inStock": true
+      }
+    ],
+    "startDate": "2024-08-01T00:00:00Z",
+    "endDate": "2024-09-01T00:00:00Z",
+    "status": "live"
+  },
+  {
+    "id": "high-varsity-drop",
+    "title": "HIGH Varsity Collection",
+    "description": "Elevated streetwear meets academic aesthetics. Varsity-coded euphoria for the discerning.",
+    "products": [
+      {
+        "id": "high-varsity-navy", 
+        "title": "HIGH Varsity Jacket - Navy",
+        "priceGBP": 95,
+        "image": "/images/products/high-varsity-navy.jpg",
+        "badge": "HIGH",
+        "href": "/product/high-varsity-navy",
+        "inStock": true
+      },
+      {
+        "id": "high-cap-black",
+        "title": "HIGH Cap - Black", 
+        "priceGBP": 25,
+        "image": "/images/products/high-cap-black.jpg",
+        "badge": "HIGH", 
+        "href": "/product/high-cap-black",
+        "inStock": false
+      }
+    ],
+    "startDate": "2024-07-15T00:00:00Z",
+    "endDate": "2024-08-15T00:00:00Z", 
+    "status": "ended"
+  },
+  {
+    "id": "raw-leather-essentials",
+    "title": "RAW Leather Essentials",
+    "description": "Leather-lux grit. Handcrafted essentials for those who know quality.",
+    "products": [
+      {
+        "id": "raw-harness-black",
+        "title": "RAW Leather Harness - Black",
+        "priceGBP": 65,
+        "image": "/images/products/raw-harness-black.jpg",
+        "badge": "RAW",
+        "href": "/product/raw-harness-black", 
+        "inStock": true
+      },
+      {
+        "id": "raw-jock-black",
+        "title": "RAW Jock - Black",
+        "priceGBP": 35,
+        "image": "/images/products/raw-jock-black.jpg",
+        "badge": "RAW",
+        "href": "/product/raw-jock-black",
+        "inStock": true
+      }
+    ],
+    "startDate": "2024-08-15T00:00:00Z",
+    "endDate": "2024-09-15T00:00:00Z",
+    "status": "upcoming"
+  }
+]
