@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, useRef } from 'react'
+import { analytics } from '../src/lib/analytics'
 
 export function RadioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -19,6 +20,8 @@ export function RadioPlayer() {
     if (audioRef.current) {
       audioRef.current.play().catch(console.error)
       setIsPlaying(true)
+      // Track analytics event
+      analytics.radioPlay('player_bar')
     }
   }
 
@@ -26,6 +29,8 @@ export function RadioPlayer() {
     if (audioRef.current) {
       audioRef.current.pause()
       setIsPlaying(false)
+      // Track analytics event
+      analytics.radioPause('player_bar')
     }
   }
 
@@ -81,10 +86,19 @@ export function RadioPlayer() {
             ref={audioRef}
             preload="none" 
             src={streamUrl}
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
+            onPlay={() => {
+              setIsPlaying(true)
+              analytics.radioPlay('player_bar')
+            }}
+            onPause={() => {
+              setIsPlaying(false)
+              analytics.radioPause('player_bar')
+            }}
             onLoadStart={() => setNowPlaying('Connecting...')}
-            onCanPlay={() => setNowPlaying('HOTMESS Radio')}
+            onCanPlay={() => {
+              setNowPlaying('HOTMESS Radio')
+              analytics.radioNowPlaying('HOTMESS Radio')
+            }}
             className="hidden"
           />
         </div>

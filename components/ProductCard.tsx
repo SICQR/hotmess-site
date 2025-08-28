@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ProductCard as ProductCardType } from '../src/types/product'
 import { preserveUtm } from '../src/lib/utm'
+import { analytics } from '../src/lib/analytics'
 
 interface ProductCardProps {
   product: ProductCardType
@@ -36,11 +37,17 @@ export function ProductCard({ product, loading = false }: ProductCardProps) {
 
   const href = preserveUtm(product.href)
 
+  const handleClick = () => {
+    // Track product view
+    analytics.productView(product.id, product.badge)
+  }
+
   return (
     <Link 
       href={href}
       className="group block"
       aria-label={`View ${product.title}`}
+      onClick={handleClick}
     >
       <div className="card p-0 overflow-hidden transform transition-transform hover:scale-[1.02] focus-within:scale-[1.02]">
         {/* Image Container */}

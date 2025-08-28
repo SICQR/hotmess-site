@@ -1,7 +1,10 @@
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { RadioPlayer } from '../../components/RadioPlayer'
+import { ScheduleGrid } from '../../components/ScheduleGrid'
 import { CrossCTA } from '../../components/CrossCTA'
+import { RadioShow } from '../../src/types/radio'
+import radioShowsData from '../../src/data/radio.json'
 
 export const metadata = {
   title: 'HOTMESS Radio — Live 24/7',
@@ -9,6 +12,9 @@ export const metadata = {
 }
 
 export default function RadioPage() {
+  // Type assertion to ensure the data matches our interface
+  const radioShows = radioShowsData as RadioShow[]
+
   return (
     <>
       <Header />
@@ -32,29 +38,14 @@ export default function RadioPage() {
       {/* Schedule Section */}
       <section className="scroll-section">
         <div className="container">
-          <h2 className="text-center mb-12">Schedule</h2>
-          <div className="grid grid-2 gap-8 mb-8">
-            <div className="card animate-fade">
-              <h3 className="mb-4">NIK DENTON RESIDENCY</h3>
-              <p className="small mb-4">Every Sunday 8PM-10PM GMT</p>
-              <p className="text-sm opacity-85">
-                Weekly residency with the provocateur himself. 
-                Deep cuts, fresh finds, and that signature energy.
-              </p>
-            </div>
-            <div className="card animate-fade" style={{ animationDelay: '0.1s' }}>
-              <h3 className="mb-4">STEWART WHO PROVOCATEUR</h3>
-              <p className="small mb-4">Bi-weekly Thursday 9PM-11PM GMT</p>
-              <p className="text-sm opacity-85">
-                Podcast vibes meet DJ sets. 
-                Stewart Who brings the conversation and the beats.
-              </p>
-            </div>
+          <h2 className="text-center mb-12">Weekly Schedule</h2>
+          <ScheduleGrid shows={radioShows} />
+          <div className="mt-12">
+            <CrossCTA 
+              primary={{ href: '/rooms', label: 'Join Community' }}
+              secondary={{ href: '/affiliate', label: 'Become Affiliate' }}
+            />
           </div>
-          <CrossCTA 
-            primary={{ href: '/rooms', label: 'Join Community' }}
-            secondary={{ href: '/affiliate', label: 'Become Affiliate' }}
-          />
         </div>
       </section>
 

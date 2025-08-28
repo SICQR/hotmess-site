@@ -1,6 +1,48 @@
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { CrossCTA } from '../../components/CrossCTA'
+import { ProductCard } from '../../components/ProductCard'
+
+// Sample product data using the correct types
+const featuredProducts = [
+  {
+    id: 'superhung-vest-black',
+    title: 'SUPERHUNG Vest',
+    priceGBP: 45,
+    image: '/superhung-vest.svg',
+    badge: 'SUPERHUNG' as const,
+    href: '/product/superhung-vest-black',
+    inStock: true
+  },
+  {
+    id: 'raw-harness-black',
+    title: 'RAW Leather Harness',
+    priceGBP: 65,
+    image: '/images/products/raw-harness-black.jpg',
+    badge: 'RAW' as const,
+    href: '/product/raw-harness-black',
+    inStock: true
+  },
+  {
+    id: 'high-varsity-navy',
+    title: 'HIGH Varsity Jacket',
+    priceGBP: 95,
+    compareAtGBP: 120,
+    image: '/images/products/high-varsity-navy.jpg',
+    badge: 'HIGH' as const,
+    href: '/product/high-varsity-navy',
+    inStock: true
+  },
+  {
+    id: 'hnh-lube',
+    title: 'HNH MESS Lube',
+    priceGBP: 18,
+    image: '/hnh-lube.svg',
+    badge: 'HIGH' as const,
+    href: '/product/hnh-lube',
+    inStock: false
+  }
+]
 
 export const metadata = {
   title: 'HOTMESS Shop — Collections',
@@ -111,31 +153,14 @@ export default function ShopPage() {
       <section id="featured" className="scroll-section">
         <div className="container">
           <h2 className="text-center mb-12">Featured</h2>
-          <div className="grid md:grid-4 gap-6 mb-8">
-            <div className="card animate-fade">
-              <div className="aspect-square bg-gray-200 rounded mb-3"></div>
-              <h4 className="text-sm font-bold mb-1">SUPERHUNG Vest</h4>
-              <p className="text-xs opacity-75 mb-2">Gym-to-rave flex</p>
-              <div className="font-bold">£45</div>
-            </div>
-            <div className="card animate-fade" style={{ animationDelay: '0.1s' }}>
-              <div className="aspect-square bg-gray-200 rounded mb-3"></div>
-              <h4 className="text-sm font-bold mb-1">RAW Leather Harness</h4>
-              <p className="text-xs opacity-75 mb-2">Essential leather</p>
-              <div className="font-bold">£65</div>
-            </div>
-            <div className="card animate-fade" style={{ animationDelay: '0.2s' }}>
-              <div className="aspect-square bg-gray-200 rounded mb-3"></div>
-              <h4 className="text-sm font-bold mb-1">HIGH Varsity Jacket</h4>
-              <p className="text-xs opacity-75 mb-2">Elevated streetwear</p>
-              <div className="font-bold">£95</div>
-            </div>
-            <div className="card animate-fade" style={{ animationDelay: '0.3s' }}>
-              <div className="aspect-square bg-gray-200 rounded mb-3"></div>
-              <h4 className="text-sm font-bold mb-1">HNH MESS Lube</h4>
-              <p className="text-xs opacity-75 mb-2">Real aftercare</p>
-              <div className="font-bold">£18</div>
-            </div>
+          <div className="grid grid-2 lg:grid-4 gap-6 mb-8">
+            {featuredProducts.map((product, index) => (
+              <ProductCard 
+                key={product.id} 
+                product={product}
+                loading={false}
+              />
+            ))}
           </div>
           <CrossCTA 
             primary={{ href: '/lookbook', label: 'View in Context' }}
