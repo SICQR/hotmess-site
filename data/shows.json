@@ -1,0 +1,49 @@
+[
+  {
+    "id": "sunday-residency",
+    "title": "Nik Denton Residency",
+    "format": "residency",
+    "djId": "nik-denton",
+    "description": "Weekly residency with the provocateur himself. Deep cuts, fresh finds, and that signature energy.",
+    "schedule": {
+      "dayOfWeek": 0,
+      "startTime": "20:00",
+      "endTime": "22:00", 
+      "timezone": "Europe/London"
+    },
+    "idents": ["nik-intro-long", "nik-intro-short"],
+    "talkBeds": ["deep-ambient-01", "minimal-groove-01"],
+    "imageUrl": "/images/shows/nik-residency.jpg"
+  },
+  {
+    "id": "provocateur-thursdays",
+    "title": "Stewart Who Provocateur",
+    "format": "provocateur", 
+    "djId": "stewart-who",
+    "description": "Bi-weekly Thursday sessions. Podcast vibes meet DJ sets. Stewart Who brings the conversation and the beats.",
+    "schedule": {
+      "dayOfWeek": 4,
+      "startTime": "21:00",
+      "endTime": "23:00",
+      "timezone": "Europe/London"
+    },
+    "idents": ["stewart-intro", "stewart-transition"],
+    "talkBeds": ["ambient-conversation", "low-key-groove"],
+    "imageUrl": "/images/shows/stewart-provocateur.jpg"
+  },
+  {
+    "id": "aftercare-sundays",
+    "title": "Aftercare Sundays",
+    "format": "mix",
+    "description": "Dedicated time for aftercare conversations. Real talk about real experiences, with resources that actually help.",
+    "schedule": {
+      "dayOfWeek": 0,
+      "startTime": "14:00", 
+      "endTime": "16:00",
+      "timezone": "Europe/London"
+    },
+    "idents": ["aftercare-intro", "care-transition"],
+    "talkBeds": ["soft-ambient", "healing-tones"],
+    "imageUrl": "/images/shows/aftercare-sundays.jpg"
+  }
+]

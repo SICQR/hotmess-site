@@ -1,0 +1,28 @@
+[
+  {
+    "id": "nik-denton",
+    "name": "Nik Denton",
+    "bio": "Weekly residency hero. Provocateur, tastemaker, and the voice that defines HOTMESS Radio's sound.",
+    "imageUrl": "/images/djs/nik-denton.jpg",
+    "socialLinks": {
+      "instagram": "@nikdenton",
+      "soundcloud": "nikdenton"
+    },
+    "residencies": ["sunday-residency"],
+    "genres": ["deep house", "techno", "progressive", "underground"],
+    "location": "London, UK"
+  },
+  {
+    "id": "stewart-who",
+    "name": "Stewart Who",
+    "bio": "Provocateur bringing podcast vibes to DJ sets. Conversations that matter with soundtracks that slap.",
+    "imageUrl": "/images/djs/stewart-who.jpg", 
+    "socialLinks": {
+      "instagram": "@stewartwho",
+      "mixcloud": "stewartwho"
+    },
+    "residencies": ["provocateur-thursdays"],
+    "genres": ["eclectic", "talk", "experimental", "ambient"],
+    "location": "London, UK"
+  }
+]

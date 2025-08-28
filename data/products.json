@@ -1,0 +1,59 @@
+[
+  {
+    "id": "superhung-vest",
+    "title": "SUPERHUNG Vest",
+    "collection": "SUPERHUNG",
+    "price": 45,
+    "currency": "GBP",
+    "images": ["/images/products/superhung-vest-1.jpg", "/images/products/superhung-vest-2.jpg"],
+    "description": "Gym-to-rave flex. Limited edition technical vest for maximum impact.",
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": ["Black", "Neon Green"],
+    "materials": ["Technical mesh", "Moisture-wicking fabric"],
+    "crossSells": ["hung-shorts", "superhung-harness"],
+    "qrRoute": "shop",
+    "tags": ["gym", "rave", "technical", "limited"]
+  },
+  {
+    "id": "hnh-lube",
+    "title": "HNH MESS Lube",
+    "collection": "HNH_MESS", 
+    "price": 18,
+    "currency": "GBP",
+    "images": ["/images/products/hnh-lube-1.jpg"],
+    "description": "The only lube with real aftercare. Water-based, long-lasting, includes aftercare guidance.",
+    "crossSells": ["aftercare-kit"],
+    "qrRoute": "hand-in-hand",
+    "tags": ["care", "aftercare", "intimate", "water-based"]
+  },
+  {
+    "id": "raw-harness",
+    "title": "RAW Leather Harness",
+    "collection": "RAW",
+    "price": 65,
+    "currency": "GBP", 
+    "images": ["/images/products/raw-harness-1.jpg", "/images/products/raw-harness-2.jpg"],
+    "description": "Essential leather harness. Handcrafted in London with premium materials.",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Black"],
+    "materials": ["Premium leather", "Metal hardware"],
+    "crossSells": ["raw-jock", "raw-shorts"],
+    "qrRoute": "shop",
+    "tags": ["leather", "harness", "handcrafted", "premium"]
+  },
+  {
+    "id": "high-varsity",
+    "title": "HIGH Varsity Jacket",
+    "collection": "HIGH",
+    "price": 95,
+    "currency": "GBP",
+    "images": ["/images/products/high-varsity-1.jpg"],
+    "description": "Elevated streetwear meets academic aesthetics. Limited varsity jacket.",
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "colors": ["Navy", "Black", "Cream"],
+    "materials": ["Wool blend", "Leather sleeves"],
+    "crossSells": ["high-tee", "high-cap"],
+    "qrRoute": "shop",
+    "tags": ["varsity", "streetwear", "academic", "limited"]
+  }
+]
