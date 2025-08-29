@@ -1,18 +1,28 @@
 {
   "name": "hotmess-ldn",
   "version": "1.0.0",
-  "description": "HOTMESS All-In Vercel Site (Vite+React)",
+  "description": "HOTMESS London — Next.js Production Site",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "nanoid": "^5.1.5",
+    "next": "^14.0.0",
+    "qrcode": "^1.5.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "qrcode": "^1.5.0"
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "vite": "^4.0.0"
+    "@types/node": "^20.0.0",
+    "@types/qrcode": "^1.5.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0",
+    "typescript": "^5.0.0"
   }
 }
