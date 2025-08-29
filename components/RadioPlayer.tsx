@@ -13,7 +13,7 @@ export function RadioPlayer() {
   useEffect(() => {
     // SSR-safe initialization
     setIsClient(true)
-    setStreamUrl(process.env.NEXT_PUBLIC_RADIOKING_STREAM_URL || '')
+    setStreamUrl(process.env.NEXT_PUBLIC_RADIO_STREAM_URL || '')
   }, [])
 
   const handlePlay = () => {
@@ -49,7 +49,7 @@ export function RadioPlayer() {
   if (!isClient || !streamUrl) {
     return (
       <div className="text-center animate-fade">
-        <h3 className="font-display font-bold mb-4">HOTMESS Radio — LIVE</h3>
+        <h3 className="font-display font-bold mb-4">LIVE • HOTMESS RADIO</h3>
         <p className="small mb-6 opacity-85">
           Loading player...
         </p>
@@ -65,7 +65,7 @@ export function RadioPlayer() {
 
   return (
     <div className="text-center animate-fade">
-      <h3 className="font-display font-bold mb-4">HOTMESS Radio — LIVE</h3>
+      <h3 className="font-display font-bold mb-4">LIVE • HOTMESS RADIO</h3>
       <p className="small mb-6 opacity-85">
         No autoplay. Click play to tune in.
       </p>

@@ -1,21 +1,23 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { RadioShow, DOW } from '../src/types/radio'
 
-interface ScheduleGridProps {
-  shows?: RadioShow[]
+export interface ShowData {
+  id: string
+  title: string
+  host: string
+  day: string
+  startTime: string
+  endTime: string
+  type: 'live' | 'mix'
+  description: string
 }
 
-const DAYS: { key: DOW; label: string }[] = [
-  { key: 'mon', label: 'Monday' },
-  { key: 'tue', label: 'Tuesday' },
-  { key: 'wed', label: 'Wednesday' },
-  { key: 'thu', label: 'Thursday' },
-  { key: 'fri', label: 'Friday' },
-  { key: 'sat', label: 'Saturday' },
-  { key: 'sun', label: 'Sunday' },
-]
+interface ScheduleGridProps {
+  shows?: ShowData[]
+}
+
+const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
 const TIME_SLOTS = [
   '06:00', '08:00', '10:00', '12:00', '14:00', '16:00',
@@ -24,7 +26,7 @@ const TIME_SLOTS = [
 
 export function ScheduleGrid({ shows = [] }: ScheduleGridProps) {
   const [currentTime, setCurrentTime] = useState<string>('')
-  const [currentDay, setCurrentDay] = useState<DOW>('mon')
+  const [currentDay, setCurrentDay] = useState<string>('')
 
   useEffect(() => {
     const updateTime = () => {
@@ -36,9 +38,8 @@ export function ScheduleGrid({ shows = [] }: ScheduleGridProps) {
       })
       setCurrentTime(londonTime)
       
-      const dayIndex = now.getDay()
-      const dayMap: DOW[] = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
-      setCurrentDay(dayMap[dayIndex])
+      const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+      setCurrentDay(dayNames[now.getDay()])
     }
 
     updateTime()
@@ -47,19 +48,23 @@ export function ScheduleGrid({ shows = [] }: ScheduleGridProps) {
     return () => clearInterval(interval)
   }, [])
 
-  const getShowForTimeSlot = (day: DOW, time: string): RadioShow | null => {
+  const getShowForTimeSlot = (day: string, time: string): ShowData | null => {
     return shows.find(show => {
       if (show.day !== day) return false
       
-      const startTime = show.start
-      const endTime = show.end
+      const startTime = show.startTime
+      const endTime = show.endTime
       
-      // Simple time comparison (assumes times are in HH:MM format)
+      // Handle overnight shows (e.g., 22:00 to 06:00)
+      if (endTime < startTime) {
+        return time >= startTime || time < endTime
+      }
+      
       return time >= startTime && time < endTime
     }) || null
   }
 
-  const isCurrentTimeSlot = (day: DOW, time: string): boolean => {
+  const isCurrentTimeSlot = (day: string, time: string): boolean => {
     if (day !== currentDay) return false
     if (!currentTime) return false
     
@@ -73,8 +78,87 @@ export function ScheduleGrid({ shows = [] }: ScheduleGridProps) {
     return Math.abs(currentMinutes - slotMinutes) < 120
   }
 
+  const getCurrentShow = (): ShowData | null => {
+    if (!currentTime || !currentDay) return null
+    
+    const now = currentTime
+    return shows.find(show => {
+      if (show.day !== currentDay) return false
+      
+      const startTime = show.startTime
+      const endTime = show.endTime
+      
+      // Handle overnight shows
+      if (endTime < startTime) {
+        return now >= startTime || now < endTime
+      }
+      
+      return now >= startTime && now < endTime
+    }) || null
+  }
+
+  const getNextShow = (): ShowData | null => {
+    if (!currentTime || !currentDay) return null
+    
+    // Find next show today or tomorrow
+    const currentDayIndex = DAYS.indexOf(currentDay)
+    
+    // First, check for shows later today
+    const todayShows = shows
+      .filter(show => show.day === currentDay)
+      .filter(show => show.startTime > currentTime)
+      .sort((a, b) => a.startTime.localeCompare(b.startTime))
+    
+    if (todayShows.length > 0) {
+      return todayShows[0]
+    }
+    
+    // Then check tomorrow
+    const nextDayIndex = (currentDayIndex + 1) % 7
+    const nextDay = DAYS[nextDayIndex]
+    const nextDayShows = shows
+      .filter(show => show.day === nextDay)
+      .sort((a, b) => a.startTime.localeCompare(b.startTime))
+    
+    return nextDayShows[0] || null
+  }
+
+  const currentShow = getCurrentShow()
+  const nextShow = getNextShow()
+
   return (
     <div className="w-full">
+      {/* Now/Next Banner */}
+      <div className="mb-8 text-center">
+        <div className="inline-flex items-center gap-4 p-4 border border-white/15 rounded-xl bg-black/20 backdrop-blur-sm">
+          <div className="text-left">
+            <div className="text-sm font-display font-bold text-accent mb-1">NOW LIVE</div>
+            {currentShow ? (
+              <div>
+                <div className="font-display font-bold">{currentShow.title}</div>
+                <div className="text-sm opacity-75">{currentShow.host}</div>
+              </div>
+            ) : (
+              <div className="opacity-75">Auto DJ Mix</div>
+            )}
+          </div>
+          
+          <div className="w-px h-12 bg-white/20" />
+          
+          <div className="text-left">
+            <div className="text-sm font-display font-bold mb-1">UP NEXT</div>
+            {nextShow ? (
+              <div>
+                <div className="font-display font-bold">{nextShow.title}</div>
+                <div className="text-sm opacity-75">{nextShow.startTime} • {nextShow.host}</div>
+              </div>
+            ) : (
+              <div className="opacity-75">Continuous Mix</div>
+            )}
+          </div>
+        </div>
+      </div>
+
       <div className="mb-6 text-center">
         <h3 className="font-display font-bold text-lg mb-2">Weekly Schedule</h3>
         <p className="text-sm opacity-75">
@@ -89,10 +173,10 @@ export function ScheduleGrid({ shows = [] }: ScheduleGridProps) {
 
       {/* Mobile-first: Stack days vertically */}
       <div className="block lg:hidden space-y-6">
-        {DAYS.map(({ key: day, label }) => (
+        {DAYS.map(day => (
           <div key={day} className="card">
             <h4 className="font-display font-bold mb-3 text-accent">
-              {label}
+              {day}
             </h4>
             <div className="space-y-2">
               {TIME_SLOTS.map(time => {
@@ -112,17 +196,15 @@ export function ScheduleGrid({ shows = [] }: ScheduleGridProps) {
                     {show ? (
                       <div className="text-right">
                         <div className="text-sm font-medium">{show.title}</div>
-                        {show.host && (
-                          <div className="text-xs opacity-75">{show.host}</div>
-                        )}
-                        {show.live && (
+                        <div className="text-xs opacity-75">{show.host}</div>
+                        {show.type === 'live' && (
                           <span className="inline-block bg-accent text-black text-xs px-2 py-0.5 rounded mt-1">
                             LIVE
                           </span>
                         )}
                       </div>
                     ) : (
-                      <div className="text-sm opacity-50">Playlist</div>
+                      <div className="text-sm opacity-50">Auto DJ</div>
                     )}
                   </div>
                 )
@@ -137,9 +219,9 @@ export function ScheduleGrid({ shows = [] }: ScheduleGridProps) {
         <div className="grid grid-cols-8 gap-2 min-w-[800px]">
           {/* Header row */}
           <div className="font-mono text-xs opacity-75 p-2">Time</div>
-          {DAYS.map(({ label }) => (
-            <div key={label} className="font-display font-bold text-sm p-2 text-center">
-              {label}
+          {DAYS.map(day => (
+            <div key={day} className="font-display font-bold text-sm p-2 text-center">
+              {day}
             </div>
           ))}
 
@@ -149,7 +231,7 @@ export function ScheduleGrid({ shows = [] }: ScheduleGridProps) {
               <div className="font-mono text-xs p-2 border-r border-white/10">
                 {time}
               </div>
-              {DAYS.map(({ key: day }) => {
+              {DAYS.map(day => {
                 const show = getShowForTimeSlot(day, time)
                 const isCurrent = isCurrentTimeSlot(day, time)
                 
@@ -163,17 +245,15 @@ export function ScheduleGrid({ shows = [] }: ScheduleGridProps) {
                     {show ? (
                       <div>
                         <div className="font-medium truncate">{show.title}</div>
-                        {show.host && (
-                          <div className="opacity-75 truncate">{show.host}</div>
-                        )}
-                        {show.live && (
+                        <div className="opacity-75 truncate">{show.host}</div>
+                        {show.type === 'live' && (
                           <span className="inline-block bg-accent text-black text-xs px-1 rounded mt-1">
                             LIVE
                           </span>
                         )}
                       </div>
                     ) : (
-                      <div className="opacity-50">Playlist</div>
+                      <div className="opacity-50">Auto DJ</div>
                     )}
                   </div>
                 )

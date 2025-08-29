@@ -7,13 +7,9 @@ import { useState } from 'react'
 const NAVIGATION_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/radio', label: 'Radio' },
-  { href: '/shop', label: 'Shop' },
-  { href: '/lookbook', label: 'Lookbook' },
   { href: '/drop', label: 'Drop' },
-  { href: '/hand-in-hand', label: 'Care' },
-  { href: '/rooms', label: 'Rooms' },
-  { href: '/affiliate', label: 'Affiliate' },
-  { href: '/label', label: 'Label' }
+  { href: '/care', label: 'Care' },
+  { href: '/affiliate', label: 'Affiliates' }
 ]
 
 export function Header() {

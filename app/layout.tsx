@@ -1,6 +1,7 @@
 import { ThemeSkin } from '../components/ThemeSkin'
 import { CookieConsent } from '../components/CookieConsent'
 import { Pixels } from '../components/Pixels'
+import { StickyRadioPlayer } from '../components/StickyRadioPlayer'
 import { AnalyticsProvider } from '../src/components/AnalyticsProvider'
 import './globals.css'
 
@@ -35,6 +36,7 @@ export default function RootLayout({
           <AnalyticsProvider>
             {children}
           </AnalyticsProvider>
+          <StickyRadioPlayer />
           <CookieConsent />
         </ThemeSkin>
       </body>
