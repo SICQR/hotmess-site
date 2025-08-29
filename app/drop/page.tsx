@@ -1,6 +1,7 @@
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { CrossCTA } from '../../components/CrossCTA'
+import dropsData from '../../src/data/drops.json'
 
 export const metadata = {
   title: 'HOTMESS Drop — Latest Capsules',
@@ -75,38 +76,21 @@ export default function DropPage() {
           
           {/* Drop Items */}
           <div className="grid md:grid-4 gap-6">
-            <div className="card animate-fade">
-              <div className="aspect-square bg-red-500/20 rounded mb-3 flex items-center justify-center">
-                <span className="text-sm font-bold opacity-75">ESCAPE VEST</span>
-              </div>
-              <h4 className="font-bold mb-2">Emergency Vest</h4>
-              <p className="text-xs opacity-75 mb-2">High-vis meets high fashion</p>
-              <div className="font-bold">£45</div>
-            </div>
-            <div className="card animate-fade" style={{ animationDelay: '0.1s' }}>
-              <div className="aspect-square bg-orange-500/20 rounded mb-3 flex items-center justify-center">
-                <span className="text-sm font-bold opacity-75">HEAT SHORTS</span>
-              </div>
-              <h4 className="font-bold mb-2">Thermal Shorts</h4>
-              <p className="text-xs opacity-75 mb-2">Cooling tech, warming looks</p>
-              <div className="font-bold">£38</div>
-            </div>
-            <div className="card animate-fade" style={{ animationDelay: '0.2s' }}>
-              <div className="aspect-square bg-yellow-500/20 rounded mb-3 flex items-center justify-center">
-                <span className="text-sm font-bold opacity-75">EXIT JACKET</span>
-              </div>
-              <h4 className="font-bold mb-2">Exit Strategy Jacket</h4>
-              <p className="text-xs opacity-75 mb-2">Convertible layers</p>
-              <div className="font-bold">£85</div>
-            </div>
-            <div className="card animate-fade" style={{ animationDelay: '0.3s' }}>
-              <div className="aspect-square bg-pink-500/20 rounded mb-3 flex items-center justify-center">
-                <span className="text-sm font-bold opacity-75">FIRE TIGHTS</span>
-              </div>
-              <h4 className="font-bold mb-2">Fire Escape Tights</h4>
-              <p className="text-xs opacity-75 mb-2">Emergency elegance</p>
-              <div className="font-bold">£28</div>
-            </div>
+            {dropsData.slice(0, 4).map((product, index) => (
+              <a
+                key={product.slug}
+                href={`/product/${product.slug}`}
+                className="card animate-fade"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="aspect-square bg-accent/10 rounded mb-3 flex items-center justify-center">
+                  <span className="text-sm font-bold opacity-75">{product.title}</span>
+                </div>
+                <h4 className="font-bold mb-2">{product.title}</h4>
+                <p className="text-xs opacity-75 mb-2">Limited drop exclusive</p>
+                <div className="font-bold">£{product.price}</div>
+              </a>
+            ))}
           </div>
         </div>
       </section>

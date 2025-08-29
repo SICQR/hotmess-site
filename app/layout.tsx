@@ -1,10 +1,12 @@
 import { ThemeSkin } from '../components/ThemeSkin'
 import { CookieConsent } from '../components/CookieConsent'
 import { Pixels } from '../components/Pixels'
+import { StickyRadioPlayer } from '../components/StickyRadioPlayer'
 import { AnalyticsProvider } from '../src/components/AnalyticsProvider'
 import './globals.css'
 
 export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://hotmess.vercel.app'),
   title: 'HOTMESS London — Always Too Much, Never Enough',
   description: 'Queer fashion, radio, and aftercare. HOTMESS London.',
   openGraph: {
@@ -35,6 +37,7 @@ export default function RootLayout({
           <AnalyticsProvider>
             {children}
           </AnalyticsProvider>
+          <StickyRadioPlayer />
           <CookieConsent />
         </ThemeSkin>
       </body>

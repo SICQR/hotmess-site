@@ -1,0 +1,268 @@
+[
+  {
+    "id": "monday-morning-mess",
+    "title": "Morning MESS",
+    "host": "DJ RAW",
+    "day": "Monday",
+    "startTime": "06:00",
+    "endTime": "09:00",
+    "type": "live",
+    "description": "Rise and grind with heavy beats and unapologetic energy"
+  },
+  {
+    "id": "monday-daytime-mix",
+    "title": "Daytime Mix",
+    "host": "Auto DJ",
+    "day": "Monday", 
+    "startTime": "09:00",
+    "endTime": "18:00",
+    "type": "mix",
+    "description": "Curated tracks to keep the energy flowing"
+  },
+  {
+    "id": "monday-evening-aftercare",
+    "title": "Evening Aftercare",
+    "host": "DJ SOFT",
+    "day": "Monday",
+    "startTime": "18:00",
+    "endTime": "22:00",
+    "type": "live",
+    "description": "Winding down with care and reflection"
+  },
+  {
+    "id": "monday-night-underground",
+    "title": "Underground Hours",
+    "host": "Auto DJ",
+    "day": "Monday",
+    "startTime": "22:00",
+    "endTime": "06:00",
+    "type": "mix",
+    "description": "Late night deep cuts and underground gems"
+  },
+
+  {
+    "id": "tuesday-morning-mess",
+    "title": "Morning MESS",
+    "host": "DJ HUNG",
+    "day": "Tuesday",
+    "startTime": "06:00",
+    "endTime": "09:00",
+    "type": "live",
+    "description": "Tuesday motivation with high-energy beats"
+  },
+  {
+    "id": "tuesday-daytime-mix",
+    "title": "Daytime Mix",
+    "host": "Auto DJ",
+    "day": "Tuesday",
+    "startTime": "09:00",
+    "endTime": "18:00",
+    "type": "mix",
+    "description": "Curated tracks to keep the energy flowing"
+  },
+  {
+    "id": "tuesday-guest-takeover",
+    "title": "Guest Takeover",
+    "host": "Guest DJ",
+    "day": "Tuesday",
+    "startTime": "18:00",
+    "endTime": "20:00",
+    "type": "live",
+    "description": "Friends of the family take control"
+  },
+  {
+    "id": "tuesday-late-shift",
+    "title": "Late Shift",
+    "host": "DJ NEON",
+    "day": "Tuesday",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "type": "live",
+    "description": "Dark, electronic, and unapologetic"
+  },
+  {
+    "id": "tuesday-night-underground",
+    "title": "Underground Hours",
+    "host": "Auto DJ",
+    "day": "Tuesday",
+    "startTime": "23:00",
+    "endTime": "06:00",
+    "type": "mix",
+    "description": "Late night deep cuts and underground gems"
+  },
+
+  {
+    "id": "wednesday-morning-mess",
+    "title": "Morning MESS",
+    "host": "DJ RAW",
+    "day": "Wednesday",
+    "startTime": "06:00",
+    "endTime": "09:00",
+    "type": "live",
+    "description": "Midweek energy boost with raw intensity"
+  },
+  {
+    "id": "wednesday-daytime-mix",
+    "title": "Daytime Mix",
+    "host": "Auto DJ",
+    "day": "Wednesday",
+    "startTime": "09:00",
+    "endTime": "18:00",
+    "type": "mix",
+    "description": "Curated tracks to keep the energy flowing"
+  },
+  {
+    "id": "wednesday-hotmess-live",
+    "title": "HOTMESS LIVE",
+    "host": "HOTMESS Collective",
+    "day": "Wednesday",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "type": "live",
+    "description": "Weekly flagship show with the full collective"
+  },
+  {
+    "id": "wednesday-night-underground", 
+    "title": "Underground Hours",
+    "host": "Auto DJ",
+    "day": "Wednesday",
+    "startTime": "21:00",
+    "endTime": "06:00",
+    "type": "mix",
+    "description": "Late night deep cuts and underground gems"
+  },
+
+  {
+    "id": "thursday-morning-mess",
+    "title": "Morning MESS",
+    "host": "DJ HUNG",
+    "day": "Thursday",
+    "startTime": "06:00",
+    "endTime": "09:00",
+    "type": "live",
+    "description": "Thursday power-up with body-positive vibes"
+  },
+  {
+    "id": "thursday-daytime-mix",
+    "title": "Daytime Mix", 
+    "host": "Auto DJ",
+    "day": "Thursday",
+    "startTime": "09:00",
+    "endTime": "18:00",
+    "type": "mix",
+    "description": "Curated tracks to keep the energy flowing"
+  },
+  {
+    "id": "thursday-pre-weekend",
+    "title": "Pre-Weekend Warm-Up",
+    "host": "DJ HIGH",
+    "day": "Thursday",
+    "startTime": "18:00",
+    "endTime": "22:00",
+    "type": "live",
+    "description": "Building energy for the weekend ahead"
+  },
+  {
+    "id": "thursday-night-underground",
+    "title": "Underground Hours",
+    "host": "Auto DJ", 
+    "day": "Thursday",
+    "startTime": "22:00",
+    "endTime": "06:00",
+    "type": "mix",
+    "description": "Late night deep cuts and underground gems"
+  },
+
+  {
+    "id": "friday-morning-mess",
+    "title": "Morning MESS",
+    "host": "DJ RAW",
+    "day": "Friday",
+    "startTime": "06:00",
+    "endTime": "09:00",
+    "type": "live",
+    "description": "Friday energy unleashed"
+  },
+  {
+    "id": "friday-daytime-mix",
+    "title": "Daytime Mix",
+    "host": "Auto DJ",
+    "day": "Friday",
+    "startTime": "09:00",
+    "endTime": "18:00",
+    "type": "mix",
+    "description": "Curated tracks to keep the energy flowing"
+  },
+  {
+    "id": "friday-rave-prep",
+    "title": "RAVE PREP",
+    "host": "DJ NEON",
+    "day": "Friday",
+    "startTime": "18:00",
+    "endTime": "21:00", 
+    "type": "live",
+    "description": "Getting ready for the weekend with peak energy"
+  },
+  {
+    "id": "friday-weekend-takeover",
+    "title": "Weekend Takeover",
+    "host": "Various DJs",
+    "day": "Friday",
+    "startTime": "21:00",
+    "endTime": "06:00",
+    "type": "live",
+    "description": "Non-stop weekend energy with rotating DJs"
+  },
+
+  {
+    "id": "saturday-weekend-vibes",
+    "title": "Weekend Vibes",
+    "host": "DJ HIGH",
+    "day": "Saturday",
+    "startTime": "06:00",
+    "endTime": "12:00",
+    "type": "live",
+    "description": "Saturday morning euphoria"
+  },
+  {
+    "id": "saturday-rave-continuous",
+    "title": "Continuous RAVE",
+    "host": "Various DJs",
+    "day": "Saturday",
+    "startTime": "12:00",
+    "endTime": "06:00",
+    "type": "live",
+    "description": "18-hour rave marathon with rotating DJs"
+  },
+
+  {
+    "id": "sunday-aftercare-morning",
+    "title": "Sunday Aftercare",
+    "host": "Hand N Hand Collective",
+    "day": "Sunday",
+    "startTime": "06:00",
+    "endTime": "12:00",
+    "type": "live",
+    "description": "Gentle recovery and care after the weekend"
+  },
+  {
+    "id": "sunday-reflection",
+    "title": "Sunday Reflection",
+    "host": "DJ SOFT",
+    "day": "Sunday",
+    "startTime": "12:00",
+    "endTime": "18:00",
+    "type": "live",
+    "description": "Mindful music for rest and reflection"
+  },
+  {
+    "id": "sunday-week-prep",
+    "title": "Week Prep",
+    "host": "Auto DJ",
+    "day": "Sunday",
+    "startTime": "18:00",
+    "endTime": "06:00",
+    "type": "mix",
+    "description": "Preparing for the week ahead with curated tracks"
+  }
+]
