@@ -1,87 +1,44 @@
 [
   {
-    "id": "superhung-drop-01",
-    "title": "SUPERHUNG Drop #01",
-    "description": "Maximum impact pieces for those who demand attention. Limited quantities, maximum statement.",
-    "products": [
-      {
-        "id": "superhung-vest-black",
-        "title": "SUPERHUNG Vest - Black",
-        "priceGBP": 45,
-        "compareAtGBP": 65,
-        "image": "/images/products/superhung-vest-black.jpg",
-        "badge": "SUPERHUNG",
-        "href": "/product/superhung-vest-black",
-        "inStock": true
-      },
-      {
-        "id": "superhung-harness",
-        "title": "SUPERHUNG Harness",
-        "priceGBP": 85,
-        "image": "/images/products/superhung-harness.jpg", 
-        "badge": "SUPERHUNG",
-        "href": "/product/superhung-harness",
-        "inStock": true
-      }
-    ],
-    "startDate": "2024-08-01T00:00:00Z",
-    "endDate": "2024-09-01T00:00:00Z",
-    "status": "live"
+    "slug": "superhung-tee",
+    "title": "SUPERHUNG Tee",
+    "price": 39,
+    "image": "/images/superhung-tee.jpg",
+    "sku": "SH-TEE-001"
   },
   {
-    "id": "high-varsity-drop",
-    "title": "HIGH Varsity Collection",
-    "description": "Elevated streetwear meets academic aesthetics. Varsity-coded euphoria for the discerning.",
-    "products": [
-      {
-        "id": "high-varsity-navy", 
-        "title": "HIGH Varsity Jacket - Navy",
-        "priceGBP": 95,
-        "image": "/images/products/high-varsity-navy.jpg",
-        "badge": "HIGH",
-        "href": "/product/high-varsity-navy",
-        "inStock": true
-      },
-      {
-        "id": "high-cap-black",
-        "title": "HIGH Cap - Black", 
-        "priceGBP": 25,
-        "image": "/images/products/high-cap-black.jpg",
-        "badge": "HIGH", 
-        "href": "/product/high-cap-black",
-        "inStock": false
-      }
-    ],
-    "startDate": "2024-07-15T00:00:00Z",
-    "endDate": "2024-08-15T00:00:00Z", 
-    "status": "ended"
+    "slug": "raw-dj-vest",
+    "title": "RAW DJ Vest",
+    "price": 49,
+    "image": "/images/raw-dj-vest.jpg",
+    "sku": "RAW-VEST-001"
   },
   {
-    "id": "raw-leather-essentials",
-    "title": "RAW Leather Essentials",
-    "description": "Leather-lux grit. Handcrafted essentials for those who know quality.",
-    "products": [
-      {
-        "id": "raw-harness-black",
-        "title": "RAW Leather Harness - Black",
-        "priceGBP": 65,
-        "image": "/images/products/raw-harness-black.jpg",
-        "badge": "RAW",
-        "href": "/product/raw-harness-black", 
-        "inStock": true
-      },
-      {
-        "id": "raw-jock-black",
-        "title": "RAW Jock - Black",
-        "priceGBP": 35,
-        "image": "/images/products/raw-jock-black.jpg",
-        "badge": "RAW",
-        "href": "/product/raw-jock-black",
-        "inStock": true
-      }
-    ],
-    "startDate": "2024-08-15T00:00:00Z",
-    "endDate": "2024-09-15T00:00:00Z",
-    "status": "upcoming"
+    "slug": "high-varsity-jacket",
+    "title": "HIGH Varsity Jacket",
+    "price": 95,
+    "image": "/images/high-varsity-jacket.jpg",
+    "sku": "HIGH-JACKET-001"
+  },
+  {
+    "slug": "superhung-harness",
+    "title": "SUPERHUNG Harness",
+    "price": 85,
+    "image": "/images/superhung-harness.jpg",
+    "sku": "SH-HARNESS-001"
+  },
+  {
+    "slug": "raw-leather-jock",
+    "title": "RAW Leather Jock",
+    "price": 35,
+    "image": "/images/raw-leather-jock.jpg",
+    "sku": "RAW-JOCK-001"
+  },
+  {
+    "slug": "high-euphoria-cap",
+    "title": "HIGH Euphoria Cap",
+    "price": 25,
+    "image": "/images/high-euphoria-cap.jpg",
+    "sku": "HIGH-CAP-001"
   }
 ]

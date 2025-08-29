@@ -8,10 +8,12 @@ const nextConfig = {
     ]
   },
   env: {
+    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://hotmess.vercel.app',
+    NEXT_PUBLIC_RADIO_STREAM_URL: process.env.NEXT_PUBLIC_RADIO_STREAM_URL || process.env.VITE_RADIO_STREAM_URL || process.env.VITE_RADIO_STREAM,
+    BOT_ENABLED: process.env.BOT_ENABLED || 'false',
     SHOPIFY_STORE_DOMAIN: process.env.SHOPIFY_STORE_DOMAIN || process.env.VITE_SHOPIFY_STORE_DOMAIN,
     SHOPIFY_STOREFRONT_TOKEN: process.env.SHOPIFY_STOREFRONT_TOKEN || process.env.VITE_SHOPIFY_STOREFRONT_TOKEN,
     SHOPIFY_API_VERSION: process.env.SHOPIFY_API_VERSION || process.env.VITE_SHOPIFY_API_VERSION || "2024-07",
-    NEXT_PUBLIC_RADIO_STREAM_URL: process.env.NEXT_PUBLIC_RADIO_STREAM_URL || process.env.VITE_RADIO_STREAM_URL || process.env.VITE_RADIO_STREAM,
     KLAVIYO_API_KEY: process.env.KLAVIYO_API_KEY || "",
     KLAVIYO_LIST_ID: process.env.KLAVIYO_LIST_ID || "",
     MAKE_WEBHOOK_URL: process.env.MAKE_WEBHOOK_URL || "",

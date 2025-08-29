@@ -6,6 +6,7 @@ import { AnalyticsProvider } from '../src/components/AnalyticsProvider'
 import './globals.css'
 
 export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://hotmess.vercel.app'),
   title: 'HOTMESS London — Always Too Much, Never Enough',
   description: 'Queer fashion, radio, and aftercare. HOTMESS London.',
   openGraph: {
