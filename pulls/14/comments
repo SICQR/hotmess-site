@@ -1,0 +1,24 @@
+🧪 FINALIZE R1 – please tick and paste links
+
+Build & Pages
+- [ ] Vercel Preview = READY → link:
+- [ ] `/` clean (no console errors)
+- [ ] `/radio` renders from `src/data/radio/shows.json`
+- [ ] `/drop` shows cards; `/product/test` renders
+- [ ] `/dev/smoke` renders `<ProductCard>` + `<CheckoutButton>`
+
+Sticky Player
+- [ ] Play/pause works with `NEXT_PUBLIC_RADIO_STREAM_URL` (no autoplay)
+
+SEO & Legal
+- [ ] `app/robots.ts` + `app/sitemap.ts` compile
+- [ ] `/care`, `/affiliate`, `/legal/terms`, `/legal/privacy`, `/legal/age` render
+
+Telemetry & UTM
+- [ ] `track()` → `/api/event` on product view + checkout click
+- [ ] `<CheckoutButton>` appends UTM without clobbering existing params
+
+Env & Hygiene
+- [ ] `NEXT_PUBLIC_SITE_URL` set
+- [ ] `NEXT_PUBLIC_RADIO_STREAM_URL` set
+- [ ] `BOT_ENABLED=false` (bot paused)
