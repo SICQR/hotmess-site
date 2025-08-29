@@ -1,5 +1,11 @@
 /* HOTMESS LDN Design System */
 :root {
+  /* --- R1 Polish --- */
+  --brand: #FF5300;
+  --ink: #fff;
+  --bg: #000;
+  --line: rgba(255,255,255,.08);
+  
   /* Colors */
   --accent: #FF5300;
   --bg-black: #0A0A0A;
@@ -46,6 +52,11 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+html, body {
+  background: #000;
+  color: var(--ink);
 }
 
 body {
@@ -251,4 +262,83 @@ h4 { font-size: clamp(1rem, 2.5vw, 1.5rem); }
 .theme-black-neon.daypart-night .accent {
   color: var(--accent);
   text-shadow: 0 0 20px currentColor;
+}
+
+/* --- R1 Polish Additions --- */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--brand);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .55rem .9rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+}
+
+.btn--brand {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #000;
+  font-weight: 700;
+}
+
+.btn--ghost {
+  background: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+hr, .card {
+  border-color: var(--line);
+}
+
+.nav a {
+  padding: .5rem .75rem;
+}
+
+.nav a[aria-current="page"] {
+  color: var(--brand);
+  border-bottom: 2px solid var(--brand);
+}
+
+footer a {
+  opacity: .9;
+}
+
+footer a:hover {
+  opacity: 1;
+  color: var(--brand);
+}
+
+::selection {
+  background: var(--brand);
+  color: #000;
+}
+
+/* Cookie banner styling */
+.cookie-banner, [data-cookie-banner] {
+  border: 1px solid var(--line);
+  background: rgba(0,0,0,.9);
+  color: var(--ink);
+}
+
+.cookie-banner button, [data-cookie-banner] button {
+  composes: btn from global;
+}
+
+.cookie-banner .accept, [data-cookie-banner] .accept {
+  composes: btn--brand from global;
 }

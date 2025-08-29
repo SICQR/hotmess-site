@@ -11,12 +11,12 @@ if (typeof global !== 'undefined') {
 }
 
 interface PageProps {
-  params: { short: string }
-  searchParams: Record<string, string | string[] | undefined>
+  params: Promise<{ short: string }>
+  searchParams: Promise<Record<string, string | string[] | undefined>>
 }
 
-export default function ShortUrlPage({ params }: PageProps) {
-  const { short } = params
+export default async function ShortUrlPage({ params }: PageProps) {
+  const { short } = await params
   
   // Look up the short code
   const urlData = (global as any).shortUrlStore?.get(short)
