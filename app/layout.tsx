@@ -2,6 +2,8 @@ import { ThemeSkin } from '../components/ThemeSkin'
 import { CookieConsent } from '../components/CookieConsent'
 import { Pixels } from '../components/Pixels'
 import { AnalyticsProvider } from '../src/components/AnalyticsProvider'
+import { Header } from '../components/Header'
+import { Footer } from '../components/Footer'
 import './globals.css'
 
 export const metadata = {
@@ -27,7 +29,11 @@ export default function RootLayout({
         <ThemeSkin>
           <Pixels />
           <AnalyticsProvider>
-            {children}
+            <Header />
+            <main className="pb-20">
+              {children}
+            </main>
+            <Footer />
           </AnalyticsProvider>
           <CookieConsent />
         </ThemeSkin>

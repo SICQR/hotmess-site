@@ -22,6 +22,7 @@ export function Footer() {
             <div className="flex flex-col gap-2 text-sm">
               <Link href="/radio" className="hover:text-accent transition-colors">Radio</Link>
               <Link href="/shop" className="hover:text-accent transition-colors">Shop</Link>
+              <Link href="/drop" className="hover:text-accent transition-colors">Drops</Link>
               <Link href="/lookbook" className="hover:text-accent transition-colors">Lookbook</Link>
               <Link href="/hand-in-hand" className="hover:text-accent transition-colors">Care</Link>
               <Link href="/affiliate" className="hover:text-accent transition-colors">Affiliate</Link>
