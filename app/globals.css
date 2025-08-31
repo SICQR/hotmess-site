@@ -252,3 +252,45 @@ h4 { font-size: clamp(1rem, 2.5vw, 1.5rem); }
   color: var(--accent);
   text-shadow: 0 0 20px currentColor;
 }
+
+/* Link Styles Fix */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Ensure buttons don't inherit link styles */
+.btn,
+button,
+.btn-primary:hover,
+.btn-secondary:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Link Styles Fix */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Ensure buttons don't inherit link styles */
+.btn,
+button,
+.btn-primary:hover,
+.btn-secondary:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
