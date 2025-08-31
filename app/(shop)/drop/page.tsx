@@ -1,6 +1,6 @@
-import { Header } from '../../components/Header'
-import { Footer } from '../../components/Footer'
-import { CrossCTA } from '../../components/CrossCTA'
+import { Header } from '../../../components/Header'
+import { Footer } from '../../../components/Footer'
+import { CrossCTA } from '../../../components/CrossCTA'
 
 export const metadata = {
   title: 'HOTMESS Drop — Latest Capsules',

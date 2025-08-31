@@ -1,10 +1,10 @@
-import { Header } from '../../components/Header'
-import { Footer } from '../../components/Footer'
-import { RadioPlayer } from '../../components/RadioPlayer'
-import { ScheduleGrid } from '../../components/ScheduleGrid'
-import { CrossCTA } from '../../components/CrossCTA'
-import { RadioShow } from '../../src/types/radio'
-import radioShowsData from '../../src/data/radio.json'
+import { Header } from '../../../components/Header'
+import { Footer } from '../../../components/Footer'
+import { RadioPlayer } from '../../../components/RadioPlayer'
+import { ScheduleGrid } from '../../../components/ScheduleGrid'
+import { CrossCTA } from '../../../components/CrossCTA'
+import { RadioShow } from '../../../src/types/radio'
+import radioShowsData from '../../../src/data/radio/shows.json'
 
 export const metadata = {
   title: 'HOTMESS Radio — Live 24/7',
