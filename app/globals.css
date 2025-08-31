@@ -273,24 +273,3 @@ button,
   color: inherit !important;
   text-decoration: none !important;
 }
-
-/* Link Styles Fix */
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: all var(--transition-base);
-}
-
-a:hover {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-/* Ensure buttons don't inherit link styles */
-.btn,
-button,
-.btn-primary:hover,
-.btn-secondary:hover {
-  color: inherit !important;
-  text-decoration: none !important;
-}
