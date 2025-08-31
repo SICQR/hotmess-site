@@ -1,0 +1,1 @@
+export default function BotPaused() { return <div>Bot Paused</div>; }

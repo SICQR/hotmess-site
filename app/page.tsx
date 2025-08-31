@@ -1,64 +1,20 @@
 'use client'
 
 import { useEffect } from 'react'
-import { Header } from '../components/Header'
-import { Footer } from '../components/Footer'
+import { Hero } from '../components/Hero'
 import { RadioPlayer } from '../components/RadioPlayer'
 import { CrossCTA } from '../components/CrossCTA'
 import { captureAttribution } from '../lib/attribution'
-
-function getDaypartGreeting() {
-  const hour = new Date().getHours()
-  if (hour >= 5 && hour < 12) return { time: 'AM', message: 'Rise and Grind', energy: 'warm' }
-  if (hour >= 12 && hour < 20) return { time: 'PM', message: 'Peak Hours', energy: 'soft' }
-  return { time: 'NIGHT', message: 'After Dark', energy: 'neon' }
-}
 
 export default function Home() {
   useEffect(() => {
     captureAttribution()
   }, [])
 
-  const daypart = getDaypartGreeting()
-
   return (
     <>
-      <Header />
-      
       {/* Hero Section */}
-      <section className="scroll-section min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="container text-center relative z-10">
-          <div className="animate-fade">
-            <p className="text-sm font-display uppercase tracking-wider opacity-75 mb-4">
-              {daypart.time} • {daypart.message}
-            </p>
-            <h1 className="mb-6 animate-slide">
-              HOTMESS<br/>
-              <span className="text-accent">LONDON</span>
-            </h1>
-            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Always Too Much, Never Enough
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="/shop" className="btn btn-primary animate-roll">
-                Shop Now
-              </a>
-              <a href="/radio" className="btn btn-secondary animate-roll" style={{ animationDelay: '0.2s' }}>
-                Listen Live
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        {/* Background gradient based on daypart */}
-        <div 
-          className={`absolute inset-0 opacity-20 ${
-            daypart.energy === 'warm' ? 'bg-gradient-to-br from-orange-900/20 to-red-900/20' :
-            daypart.energy === 'soft' ? 'bg-gradient-to-br from-blue-900/20 to-purple-900/20' :
-            'bg-gradient-to-br from-accent/10 to-pink-900/20'
-          }`}
-        />
-      </section>
+      <Hero />
 
       {/* Mini Radio Player */}
       <section className="scroll-section">
@@ -160,10 +116,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Affiliate Teaser */}
+      {/* Affiliate Program */}
       <section className="scroll-section bg-accent/10">
         <div className="container text-center">
-          <h2 className="mb-6">Earn with Us</h2>
+          <h2 className="mb-6">Affiliate Program</h2>
           <p className="small mb-8 max-w-2xl mx-auto">
             Generate personal QR codes, track performance, get paid.
           </p>
@@ -173,8 +129,6 @@ export default function Home() {
           />
         </div>
       </section>
-
-      <Footer />
     </>
   )
 }

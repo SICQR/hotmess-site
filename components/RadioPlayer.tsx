@@ -13,7 +13,13 @@ export function RadioPlayer() {
   useEffect(() => {
     // SSR-safe initialization
     setIsClient(true)
-    setStreamUrl(process.env.NEXT_PUBLIC_RADIOKING_STREAM_URL || '')
+    const stream = 
+      process.env.NEXT_PUBLIC_RADIO_STREAM_URL ||
+      process.env.NEXT_PUBLIC_STREAM_URL ||
+      process.env.VITE_RADIO_STREAM_URL ||
+      process.env.RADIOKING_STREAM_URL ||
+      '';
+    setStreamUrl(stream)
   }, [])
 
   const handlePlay = () => {
