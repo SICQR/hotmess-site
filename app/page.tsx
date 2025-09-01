@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import Image from 'next/image'
 import { Hero } from '../components/Hero'
 import { RadioPlayer } from '../components/RadioPlayer'
 import { CrossCTA } from '../components/CrossCTA'
@@ -29,21 +30,39 @@ export default function Home() {
           <h2 className="text-center mb-12">Latest Drops</h2>
           <div className="grid grid-3 mb-8">
             <a href="/shop" className="card animate-fade">
-              <img src="/images/superhung-vest.svg" alt="SUPERHUNG Vest" className="w-full h-48 object-cover mb-4 rounded" />
+              <Image 
+                src="/images/superhung-vest.svg" 
+                alt="SUPERHUNG Vest" 
+                width={400}
+                height={192}
+                className="w-full h-48 object-cover mb-4 rounded" 
+              />
               <div>
                 <h3 className="mb-2">SUPERHUNG Vest</h3>
                 <p className="small">Gym-to-rave flex. Limited.</p>
               </div>
             </a>
             <a href="/shop" className="card animate-fade" style={{ animationDelay: '0.1s' }}>
-              <img src="/images/hnh-lube.svg" alt="HNH MESS Lube" className="w-full h-48 object-cover mb-4 rounded" />
+              <Image 
+                src="/images/hnh-lube.svg" 
+                alt="HNH MESS Lube" 
+                width={400}
+                height={192}
+                className="w-full h-48 object-cover mb-4 rounded" 
+              />
               <div>
                 <h3 className="mb-2">HNH MESS Lube</h3>
                 <p className="small">The only lube with real aftercare.</p>
               </div>
             </a>
             <a href="/radio" className="card animate-fade" style={{ animationDelay: '0.2s' }}>
-              <img src="/images/radio-banner.svg" alt="HOTMESS Radio" className="w-full h-48 object-cover mb-4 rounded" />
+              <Image 
+                src="/images/radio-banner.svg" 
+                alt="HOTMESS Radio" 
+                width={400}
+                height={192}
+                className="w-full h-48 object-cover mb-4 rounded" 
+              />
               <div>
                 <h3 className="mb-2">HOTMESS Radio</h3>
                 <p className="small">Live DJs. Stingers. Aftercare Sundays.</p>

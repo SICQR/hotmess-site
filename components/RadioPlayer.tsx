@@ -7,7 +7,7 @@ export function RadioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [streamUrl, setStreamUrl] = useState('')
   const [isClient, setIsClient] = useState(false)
-  const [nowPlaying, setNowPlaying] = useState<string>('HOTMESS Radio')
+  const [nowPlaying, setNowPlaying] = useState<{artist: string, title: string}>({artist: 'HOTMESS', title: 'Radio'})
   const audioRef = useRef<HTMLAudioElement>(null)
 
   useEffect(() => {
@@ -20,6 +20,28 @@ export function RadioPlayer() {
       process.env.RADIOKING_STREAM_URL ||
       '';
     setStreamUrl(stream)
+
+    // Fetch now playing info
+    const fetchNowPlaying = async () => {
+      try {
+        const response = await fetch('/api/nowplaying')
+        if (response.ok) {
+          const data = await response.json()
+          setNowPlaying(data)
+          if (data.title !== 'Live') {
+            analytics.radioNowPlaying(data.title, data.artist)
+          }
+        }
+      } catch (error) {
+        console.warn('Failed to fetch now playing:', error)
+      }
+    }
+
+    fetchNowPlaying()
+    
+    // Update now playing every 30 seconds
+    const interval = setInterval(fetchNowPlaying, 30000)
+    return () => clearInterval(interval)
   }, [])
 
   const handlePlay = () => {
@@ -100,10 +122,10 @@ export function RadioPlayer() {
               setIsPlaying(false)
               analytics.radioPause('player_bar')
             }}
-            onLoadStart={() => setNowPlaying('Connecting...')}
+            onLoadStart={() => setNowPlaying({artist: 'HOTMESS', title: 'Connecting...'})}
             onCanPlay={() => {
-              setNowPlaying('HOTMESS Radio')
-              analytics.radioNowPlaying('HOTMESS Radio')
+              // Keep current now playing info when audio is ready
+              analytics.radioNowPlaying(nowPlaying.title, nowPlaying.artist)
             }}
             className="hidden"
           />
@@ -111,7 +133,7 @@ export function RadioPlayer() {
       </div>
       <div className="mt-4">
         <p className="text-sm opacity-75">
-          Now Playing: {nowPlaying}
+          Now Playing: {nowPlaying.artist} - {nowPlaying.title}
         </p>
         {isPlaying && (
           <p className="text-xs mt-2 opacity-60 animate-fade">
