@@ -1,5 +1,5 @@
 // Product types as specified in the business requirements
-export type Badge = 'RAW'|'HUNG'|'HIGH'|'SUPERHUNG'|'SUPERHIGH';
+export type Badge = 'RAW'|'HUNG'|'HIGH'|'SUPERHUNG'|'SUPERHIGH'|'HNH_MESS';
 
 export interface ProductCard {
   id: string; 
