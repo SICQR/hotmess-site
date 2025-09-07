@@ -1,5 +1,3 @@
-import { Header } from '../../components/Header'
-import { Footer } from '../../components/Footer'
 import { CrossCTA } from '../../components/CrossCTA'
 import { ProductCard } from '../../components/ProductCard'
 
@@ -52,8 +50,6 @@ export const metadata = {
 export default function ShopPage() {
   return (
     <>
-      <Header />
-      
       {/* Hero Section */}
       <section className="scroll-section min-h-screen flex items-center justify-center">
         <div className="container text-center">
@@ -206,8 +202,6 @@ export default function ShopPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   )
 }

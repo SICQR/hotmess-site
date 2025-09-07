@@ -1,6 +1,5 @@
 'use client'
 
-import { Header } from '../../components/Header'
 import { Section } from '../../components/Section'
 import { Container } from '../../components/Container'
 import { Prose } from '../../components/Prose'
@@ -20,8 +19,6 @@ export default function AffiliatePage() {
   }
   return (
     <>
-      <Header />
-      
       {/* Hero Section */}
       <Section className="min-h-screen flex items-center justify-center">
         <Container className="text-center">

@@ -1,5 +1,3 @@
-import { Header } from '../../../components/Header'
-import { Footer } from '../../../components/Footer'
 import { RadioPlayer } from '../../../components/RadioPlayer'
 import { ScheduleGrid } from '../../../components/ScheduleGrid'
 import { CrossCTA } from '../../../components/CrossCTA'
@@ -17,8 +15,6 @@ export default function RadioPage() {
 
   return (
     <>
-      <Header />
-      
       {/* Hero Section */}
       <section className="scroll-section min-h-screen flex items-center justify-center">
         <div className="container text-center">
@@ -99,7 +95,6 @@ export default function RadioPage() {
         </div>
       </section>
 
-      <Footer />
     </>
   )
 }
