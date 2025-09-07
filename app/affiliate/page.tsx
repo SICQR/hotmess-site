@@ -1,7 +1,9 @@
 'use client'
 
 import { Header } from '../../components/Header'
-import { Footer } from '../../components/Footer'
+import { Section } from '../../components/Section'
+import { Container } from '../../components/Container'
+import { Prose } from '../../components/Prose'
 import { CrossCTA } from '../../components/CrossCTA'
 import { QRCodeGenerator } from '../../components/QRCodeGenerator'
 import { analytics } from '../../src/lib/analytics'
@@ -21,8 +23,8 @@ export default function AffiliatePage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="scroll-section min-h-screen flex items-center justify-center">
-        <div className="container text-center">
+      <Section className="min-h-screen flex items-center justify-center">
+        <Container className="text-center">
           <div className="animate-fade">
             <h1 className="mb-6">
               AFFILIATE<br/>
@@ -46,123 +48,143 @@ export default function AffiliatePage() {
               </button>
             </div>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       {/* How It Works */}
-      <section className="scroll-section">
-        <div className="container">
+      <Section>
+        <Container>
           <h2 className="text-center mb-12">How It Works</h2>
           <div className="grid grid-3 gap-8 mb-8">
             <div className="card text-center animate-fade">
               <div className="text-4xl mb-4">1</div>
               <h4 className="mb-3">GENERATE</h4>
-              <p className="small">
-                Choose your target (radio, shop, rooms, etc.) and generate 
-                a personal QR code with automatic UTM tracking.
-              </p>
+              <Prose>
+                <p>
+                  Choose your target (radio, shop, rooms, etc.) and generate 
+                  a personal QR code with automatic UTM tracking.
+                </p>
+              </Prose>
             </div>
             <div className="card text-center animate-fade" style={{ animationDelay: '0.1s' }}>
               <div className="text-4xl mb-4">2</div>
               <h4 className="mb-3">SHARE</h4>
-              <p className="small">
-                Share your QR codes on social, print them, put them anywhere. 
-                Every scan gets tracked back to you.
-              </p>
+              <Prose>
+                <p>
+                  Share your QR codes on social, print them, put them anywhere. 
+                  Every scan gets tracked back to you.
+                </p>
+              </Prose>
             </div>
             <div className="card text-center animate-fade" style={{ animationDelay: '0.2s' }}>
               <div className="text-4xl mb-4">3</div>
               <h4 className="mb-3">EARN</h4>
-              <p className="small">
-                Get paid weekly based on scans, sessions, conversions, and AOV. 
-                Real-time tracking, transparent payouts.
-              </p>
+              <Prose>
+                <p>
+                  Get paid weekly based on scans, sessions, conversions, and AOV. 
+                  Real-time tracking, transparent payouts.
+                </p>
+              </Prose>
             </div>
           </div>
           <CrossCTA 
             primary={{ href: '#generator', label: 'Start Generating' }}
             secondary={{ href: '/rooms', label: 'Join Community' }}
           />
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       {/* QR Generator */}
-      <section id="generator" className="scroll-section">
-        <div className="container">
+      <Section id="generator">
+        <Container>
           <h2 className="text-center mb-12">Personal QR Generator</h2>
           <QRCodeGenerator />
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       {/* Attribution Modes */}
-      <section className="scroll-section">
-        <div className="container">
+      <Section>
+        <Container>
           <h2 className="text-center mb-12">Attribution Models</h2>
           <div className="grid grid-3 gap-8 mb-8">
             <div className="card animate-fade">
               <h4 className="mb-3">FIRST TOUCH</h4>
-              <p className="small mb-4">Credit goes to the first affiliate who brought the customer</p>
-              <div className="text-xs opacity-75">Best for brand awareness campaigns</div>
+              <Prose>
+                <p>Credit goes to the first affiliate who brought the customer</p>
+                <p className="text-xs opacity-75">Best for brand awareness campaigns</p>
+              </Prose>
             </div>
             <div className="card animate-fade" style={{ animationDelay: '0.1s' }}>
               <h4 className="mb-3">LAST TOUCH</h4>
-              <p className="small mb-4">Credit goes to the last affiliate before conversion</p>
-              <div className="text-xs opacity-75">Best for direct response campaigns</div>
+              <Prose>
+                <p>Credit goes to the last affiliate before conversion</p>
+                <p className="text-xs opacity-75">Best for direct response campaigns</p>
+              </Prose>
             </div>
             <div className="card animate-fade" style={{ animationDelay: '0.2s' }}>
               <h4 className="mb-3">TIME DECAY (7D)</h4>
-              <p className="small mb-4">Recent touches get more credit, older ones fade</p>
-              <div className="text-xs opacity-75">Best for balanced attribution</div>
+              <Prose>
+                <p>Recent touches get more credit, older ones fade</p>
+                <p className="text-xs opacity-75">Best for balanced attribution</p>
+              </Prose>
             </div>
           </div>
-          <p className="text-center text-sm opacity-85">
-            We track all models but pay based on the active mode set by admin.
-          </p>
-        </div>
-      </section>
+          <Prose className="text-center">
+            <p className="text-sm opacity-85">
+              We track all models but pay based on the active mode set by admin.
+            </p>
+          </Prose>
+        </Container>
+      </Section>
 
       {/* Commission Structure */}
-      <section className="scroll-section bg-accent/10">
-        <div className="container">
+      <Section className="bg-accent/10">
+        <Container>
           <h2 className="text-center mb-12">Commission Structure</h2>
           <div className="grid grid-2 gap-8 mb-8">
             <div className="card">
               <h4 className="mb-4">TIER 1: SCANNER</h4>
               <div className="text-2xl font-bold text-accent mb-4">5%</div>
-              <ul className="text-sm space-y-2">
-                <li>• 5% commission on referred sales</li>
-                <li>• Weekly payouts via bank transfer</li>
-                <li>• Real-time dashboard access</li>
-                <li>• Basic QR code generation</li>
-              </ul>
+              <Prose>
+                <ul>
+                  <li>5% commission on referred sales</li>
+                  <li>Weekly payouts via bank transfer</li>
+                  <li>Real-time dashboard access</li>
+                  <li>Basic QR code generation</li>
+                </ul>
+              </Prose>
             </div>
             <div className="card">
               <h4 className="mb-4">TIER 2: PROVOCATEUR</h4>
               <div className="text-2xl font-bold text-accent mb-4">8%</div>
-              <ul className="text-sm space-y-2">
-                <li>• 8% commission on referred sales</li>
-                <li>• Bonus payouts for milestones</li>
-                <li>• Advanced analytics access</li>
-                <li>• Custom QR designs</li>
-                <li>• Priority support channel</li>
-              </ul>
+              <Prose>
+                <ul>
+                  <li>8% commission on referred sales</li>
+                  <li>Bonus payouts for milestones</li>
+                  <li>Advanced analytics access</li>
+                  <li>Custom QR designs</li>
+                  <li>Priority support channel</li>
+                </ul>
+              </Prose>
             </div>
           </div>
           <div className="text-center">
-            <p className="small mb-6">
-              Upgrade to Provocateur after £1000 in referred sales or 500+ scans in 30 days
-            </p>
+            <Prose>
+              <p className="small mb-6">
+                Upgrade to Provocateur after £1000 in referred sales or 500+ scans in 30 days
+              </p>
+            </Prose>
             <CrossCTA 
               primary={{ href: '#generator', label: 'Generate Your First QR' }}
               secondary={{ href: '/hand-in-hand', label: 'Learn More' }}
             />
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       {/* Dashboard Preview */}
-      <section id="dashboard" className="scroll-section">
-        <div className="container">
+      <Section id="dashboard">
+        <Container>
           <h2 className="text-center mb-12">Dashboard Preview</h2>
           <div className="card bg-black/20 p-8">
             <div className="grid grid-2 md:grid-4 gap-6 mb-8">
@@ -183,14 +205,14 @@ export default function AffiliatePage() {
                 <div className="small">Average Order Value</div>
               </div>
             </div>
-            <p className="text-center small opacity-75">
-              Real-time tracking with 7-day and 30-day trend analysis
-            </p>
+            <Prose className="text-center">
+              <p className="small opacity-75">
+                Real-time tracking with 7-day and 30-day trend analysis
+              </p>
+            </Prose>
           </div>
-        </div>
-      </section>
-
-      <Footer />
+        </Container>
+      </Section>
     </>
   )
 }
