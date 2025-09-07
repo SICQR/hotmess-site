@@ -4,6 +4,7 @@ import type { NextRequest } from 'next/server';
 // Routes that require age verification (18+)
 const AGE_RESTRICTED_ROUTES = [
   '/rooms', // Contains "After Dark" 18+ content
+  '/hand-in-hand', // Contains sexual health resources and intimate products
 ];
 
 export function middleware(req: NextRequest) {
@@ -23,6 +24,8 @@ export function middleware(req: NextRequest) {
   }
 
   // UTM and affiliate parameter tracking
+  // Note: Attribution cookies are considered necessary for business operations
+  // and affiliate commission tracking, separate from analytics consent
   const utmParams = {
     source: url.searchParams.get('utm_source'),
     medium: url.searchParams.get('utm_medium'), 
