@@ -2,8 +2,36 @@
 
 import { Header } from '../../../components/Header'
 import { Footer } from '../../../components/Footer'
+import { useSearchParams, useRouter } from 'next/navigation'
+import { Suspense } from 'react'
 
-export default function AgeVerificationPage() {
+function AgeVerificationContent() {
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const returnUrl = searchParams.get('return') || '/'
+
+  const handleAgeVerification = (isOver18: boolean) => {
+    if (isOver18) {
+      // Set both localStorage and prepare for cookie setting
+      localStorage.setItem('age_verified', 'true')
+      
+      // Set age verification cookie via API call
+      fetch('/api/verify-age', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ verified: true })
+      }).then(() => {
+        // Redirect to the return URL or home
+        router.push(returnUrl)
+      }).catch(() => {
+        // Fallback - still redirect but without server cookie
+        router.push(returnUrl)
+      })
+    } else {
+      // Redirect to home page for under 18
+      router.push('/')
+    }
+  }
   return (
     <>
       <Header />
@@ -44,16 +72,13 @@ export default function AgeVerificationPage() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
-                onClick={() => window.history.back()}
+                onClick={() => handleAgeVerification(false)}
                 className="btn btn-secondary"
               >
                 I'm Under 18
               </button>
               <button 
-                onClick={() => {
-                  localStorage.setItem('age_verified', 'true')
-                  window.history.back()
-                }}
+                onClick={() => handleAgeVerification(true)}
                 className="btn btn-primary"
               >
                 I'm 18 or Older
@@ -70,5 +95,20 @@ export default function AgeVerificationPage() {
       
       <Footer />
     </>
+  )
+}
+
+export default function AgeVerificationPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-6xl mb-4">🔞</div>
+          <p>Loading age verification...</p>
+        </div>
+      </div>
+    }>
+      <AgeVerificationContent />
+    </Suspense>
   )
 }
