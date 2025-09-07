@@ -3,7 +3,7 @@ import { CookieConsent } from '../components/CookieConsent'
 import { Pixels } from '../components/Pixels'
 import { AnalyticsProvider } from '../src/components/AnalyticsProvider'
 import { Header } from '../components/Header'
-import { Footer } from '../components/Footer'
+import { SiteFooter } from '../components/SiteFooter'
 import './globals.css'
 
 export const metadata = {
@@ -33,7 +33,7 @@ export default function RootLayout({
             <main className="pb-20">
               {children}
             </main>
-            <Footer />
+            <SiteFooter />
           </AnalyticsProvider>
           <CookieConsent />
         </ThemeSkin>

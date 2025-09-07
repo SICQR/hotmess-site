@@ -1,13 +1,8 @@
 'use client'
 
-import { Header } from '../../../components/Header'
-import { Footer } from '../../../components/Footer'
-
 export default function AgeVerificationPage() {
   return (
     <>
-      <Header />
-      
       <section className="scroll-section min-h-screen flex items-center justify-center">
         <div className="container max-w-2xl text-center">
           <div className="card p-12">
@@ -67,8 +62,6 @@ export default function AgeVerificationPage() {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </>
   )
 }

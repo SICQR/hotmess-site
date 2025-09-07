@@ -2,6 +2,10 @@
 @import "@fontsource/oswald/500.css";
 @import "@fontsource/oswald/600.css";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root { --hm-orange:#FF5300; font-size:17px; }
 html { font-family: Oswald, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
 
