@@ -68,3 +68,10 @@ jspm_packages/
 # Temporary files
 *.tmp
 *.temp
+
+# TypeScript build info
+tsconfig.tsbuildinfo
+
+# Automation reports
+automation-report.json
+deployment-report.json

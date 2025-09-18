@@ -26,6 +26,9 @@ jobs:
       
       - name: Run linting
         run: npx next lint
+      
+      - name: Run PR validation
+        run: npm run pr:validate
 
   build:
     runs-on: ubuntu-latest
@@ -108,6 +111,11 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./
+      
+      - name: Run deployment health check
+        run: npm run deploy:health
+        env:
+          VERCEL_URL: ${{ steps.deploy.outputs.preview-url }}
 
   deploy-production:
     runs-on: ubuntu-latest
