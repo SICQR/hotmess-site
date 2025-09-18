@@ -126,6 +126,8 @@ h4 { font-size: clamp(1rem, 2.5vw, 1.5rem); }
 .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.grid-5 { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.grid-7 { grid-template-columns: repeat(7, 1fr); }
 
 /* Interactive Elements */
 .btn {
@@ -319,4 +321,63 @@ button:hover {
 .theme-black-neon.daypart-night .accent {
   color: var(--accent);
   text-shadow: 0 0 20px currentColor;
+}
+
+/* Feature Strip Icons */
+.feature-icon-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-base);
+  border-radius: var(--radius-md);
+}
+
+.feature-icon-link:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-2);
+  transition: all var(--transition-base);
+}
+
+.feature-icon-link:hover .feature-icon {
+  transform: scale(1.1);
+}
+
+/* Weather components */
+.weather-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  backdrop-filter: blur(10px);
+}
+
+.weather-emoji {
+  font-size: 1.5rem;
+}
+
+/* Community feed styling */
+.community-post {
+  border-left: 2px solid var(--accent);
+  padding-left: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+/* Partner strip */
+.partner-logo {
+  opacity: 0.7;
+  transition: opacity var(--transition-base);
+  filter: brightness(0) invert(1);
+}
+
+.partner-logo:hover {
+  opacity: 1;
 }
