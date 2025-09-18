@@ -7,6 +7,9 @@ import { useState } from 'react'
 const NAVIGATION_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/radio', label: 'Radio' },
+  { href: '/events', label: 'Events' },
+  { href: '/weather', label: 'Weather' },
+  { href: '/community', label: 'Community' },
   { href: '/hand-in-hand', label: 'Care' },
   { href: '/affiliate', label: 'Affiliate' }
 ]
@@ -15,7 +18,9 @@ const SHOP_LINKS = [
   { href: '/shop', label: 'All Products' },
   { href: '/shop/drops', label: 'Latest Drops' },
   { href: '/shop/collections', label: 'Collections' },
-  { href: '/lookbook', label: 'Lookbook' }
+  { href: '/lookbook', label: 'Lookbook' },
+  { href: '/ar-unlock', label: 'AR Portal' },
+  { href: '/leaderboard', label: 'Leaderboard' }
 ]
 
 export function Header() {
