@@ -1,0 +1,54 @@
+name: Auto PR Comments
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  auto-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run PR validation
+        id: pr-validation
+        run: |
+          OUTPUT=$(npm run pr:validate 2>&1 || true)
+          echo "validation-output<<EOF" >> $GITHUB_OUTPUT
+          echo "$OUTPUT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+      
+      - name: Comment PR with validation results
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const output = `${{ steps.pr-validation.outputs.validation-output }}`;
+            const comment = `## 🤖 HOTMESS PR Automation Report
+            
+            \`\`\`
+            ${output}
+            \`\`\`
+            
+            This automated validation runs on every PR to ensure code quality and deployment readiness.
+            
+            **Next Steps:**
+            - ✅ If all checks pass, your PR is ready for review
+            - ⚠️ If there are warnings, consider addressing them
+            - ❌ If there are errors, please fix them before requesting review
+            `;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

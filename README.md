@@ -220,6 +220,38 @@ MAKE_WEBHOOK_URL=https://hook.integromat.com/xxxxx
 - **Deploy**: Automatic Vercel deployment
 - **Performance**: Lighthouse CI audits
 
+### 🤖 Push & Pull Request Automation
+
+#### Automated Validation Scripts
+- **`npm run pr:validate`** - Comprehensive PR validation
+- **`npm run push:validate`** - Pre-push quality checks
+- **`npm run deploy:health`** - Post-deployment health monitoring
+- **`npm run validate:all`** - Run all validations
+
+#### Pre-Push Validation
+Automatic validation before every push including:
+- Code quality (linting, TypeScript)
+- Commit message conventions
+- Secret detection
+- Build size analysis
+
+#### PR Automation Features
+- Automated checklist validation
+- Build and deployment checks
+- Performance budget monitoring
+- SEO and accessibility validation
+- Automated status comments
+
+#### Git Hooks
+- **Pre-push hook**: Runs validation before allowing pushes
+- Install hooks: `npm run setup:automation`
+
+#### GitHub Actions Integration
+- Automated PR validation comments
+- Deployment health checks
+- Performance monitoring
+- Branch protection enforcement
+
 ## 🧪 Testing Strategy
 
 ### Unit Tests (Planned)

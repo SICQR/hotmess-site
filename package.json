@@ -9,7 +9,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pr:validate": "node scripts/pr-automation.js",
+    "push:validate": "node scripts/pre-push-validation.js",
+    "deploy:health": "node scripts/deployment-health-check.js",
+    "hooks:install": "chmod +x .git/hooks/pre-push",
+    "validate:all": "npm run lint && npm run push:validate && npm run pr:validate",
+    "setup:automation": "node scripts/setup-automation.js"
   },
   "dependencies": {
     "@fontsource/oswald": "^5.0.0",
