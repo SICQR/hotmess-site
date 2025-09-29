@@ -1,7 +1,7 @@
 {
-  "name": "hotmess-ldn",
+  "name": "hotmess-ultimate",
   "version": "1.0.0",
-  "description": "HOTMESS All-In Vercel Site (Next.js)",
+  "description": "Hotmess Ultimate project - source code and resources",
   "engines": {
     "node": ">=20 <21"
   },
