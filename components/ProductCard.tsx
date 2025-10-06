@@ -18,6 +18,7 @@ const BADGE_COLORS = {
   HIGH: 'bg-blue-600 text-white',
   SUPERHUNG: 'bg-orange-600 text-white',
   SUPERHIGH: 'bg-purple-600 text-white',
+  HNH_MESS: 'bg-pink-600 text-white',
 }
 
 export function ProductCard({ product, loading = false }: ProductCardProps) {
